@@ -21,6 +21,14 @@ const projects = (await getCollection('work'))
 	.sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf())
 	.slice(0, 4);
 
+// Images for the brand mentions section
+const mentions = [
+	{ name: 'mentionOne', image: '/assets/mention_one.png' },
+	{ name: 'mentionTwo', image: '/assets/mention_two.png' },
+	{ name: 'mentionThree', image: '/assets/mention_three.png' },
+	{ name: 'mentionFour', image: '/assets/mention_four.png' },
+];
+
 // Full Astro Component Syntax:
 // https://docs.astro.build/basics/astro-components/
 ---
@@ -82,17 +90,17 @@ const projects = (await getCollection('work'))
 				<header class="section-header stack gap-2 lg:gap-4">
 					<h3>Mentions</h3>
 					<p>
-						I have been fortunate enough to receive praise for my work in several publications. Take
-						a look below to learn more.
+						I have been fortunate enough to receive praise for my work in several areas. Take
+						a look below.
 					</p>
 				</header>
 
 				<div class="gallery">
 					<Grid variant="small">
 						{
-							['Medium', 'BuzzFeed', 'The Next Web', 'awwwards.', 'TechCrunch'].map((brand) => (
+							mentions.map((brand) => (
 								<li class="mention-card">
-									<p>{brand}</p>
+									<img src={brand.image} alt={brand.name} />
 								</li>
 							))
 						}
@@ -230,7 +238,7 @@ const projects = (await getCollection('work'))
 	}
 
 	/* ====================================================== */
-
+	/*
 	.mention-card {
 		display: flex;
 		height: 7rem;
@@ -242,6 +250,13 @@ const projects = (await getCollection('work'))
 		color: var(--gray-300);
 		background: var(--gradient-subtle);
 		box-shadow: var(--shadow-sm);
+	}
+	*/
+
+	.mention-card img {
+		max-height: 100%;
+		max-width: 100%;
+		border-radius: 1rem;
 	}
 
 	@media (min-width: 50em) {
