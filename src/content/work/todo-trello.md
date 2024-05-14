@@ -4,18 +4,38 @@ publishDate: 2019-10-02 00:00:00
 img: /assets/todo_project.png
 img_alt: Soft pink and baby blue water ripples together in a subtle texture.
 description: |
-  My first project with Get Coding.
+  Intro to web dev project with Get Coding.
 tags:
   - Design
-  - Devlop
+  - Devlopment
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur posuere commodo venenatis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nam non ligula vel metus efficitur hendrerit. In hac habitasse platea dictumst. Praesent et mauris ut mi dapibus semper. Curabitur tortor justo, efficitur sit amet pretium cursus, porta eget odio. Cras ac venenatis dolor. Donec laoreet posuere malesuada. Curabitur nec mi tempor, placerat leo sit amet, tincidunt est. Quisque pellentesque venenatis magna, eget tristique nibh pulvinar in. Vestibulum vitae volutpat arcu. Aenean ut malesuada odio, sit amet pellentesque odio. Suspendisse nunc elit, blandit nec hendrerit non, aliquet at magna. Donec id leo ut nulla sagittis sodales.
+## Task Mastery Unleashed:
 
-Integer vitae nibh elit. Suspendisse eget urna eu neque bibendum pharetra. Sed interdum lectus sem, in pulvinar magna dignissim vel. Quisque maximus at urna nec laoreet. Suspendisse potenti. Vestibulum rhoncus sem ut mi pellentesque, in vestibulum erat blandit. Aliquam sodales dui ac maximus consectetur. Duis quis est vehicula, imperdiet nisl nec, fermentum erat. Duis tortor diam, pharetra eu euismod in, vehicula non eros. Curabitur facilisis dui at erat ultrices gravida. In at nunc ultricies, pulvinar mi vel, sagittis mauris. Praesent pharetra posuere purus ac imperdiet. Nulla facilisi.
+> Empower your productivity with dynamic task management, real-time weather updates, and a built-in calculator.
 
-Sed pulvinar porttitor mi in ultricies. Etiam non dolor gravida eros pulvinar pellentesque et dictum ex. Proin eu ornare ligula, sed condimentum dui. Vivamus tincidunt tellus mi, sed semper ipsum pharetra a. Suspendisse sollicitudin at sapien nec volutpat. Etiam justo urna, laoreet ac lacus sed, ultricies facilisis dolor. Integer posuere, metus vel viverra gravida, risus elit ornare magna, id feugiat erat risus ullamcorper libero. Proin vitae diam auctor, laoreet lorem vitae, varius tellus.
+Live address => <a href="https://millerm30.github.io/todo/" target="_blank">Website</a> <br>
+Project Repo => <a href="https://github.com/millerm30/todo" target="_blank">Github Repo</a> <br>
 
-Mauris sed eros in ex maximus volutpat. Suspendisse potenti. Donec lacinia justo consectetur sagittis tempor. Proin ullamcorper nisi vitae auctor rhoncus. Sed tristique aliquam augue. Pellentesque vitae fringilla ligula. Nulla arcu elit, efficitur eu nunc malesuada, eleifend tincidunt orci. Interdum et malesuada fames ac ante ipsum primis in faucibus. Integer mattis orci in bibendum ultricies. Quisque a dui erat. Phasellus et vulputate ipsum. Proin metus ex, lobortis nec ornare eget, bibendum ut sapien. Aliquam in dolor lobortis, aliquam tellus a, congue augue. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+**Project Overview:** <br>
+My first project during my time in school was a dynamic to-do list web application, inspired by Trello's organizational capabilities. Developed using HTML, CSS, and JavaScript, this project served as my introduction to web development, combining essential frontend technologies with practical features for task management.
 
-Aenean pretium purus augue, ut bibendum erat convallis quis. Cras condimentum quis velit ac mollis. Suspendisse non purus fringilla, venenatis nisl porta, finibus odio. Curabitur aliquet metus faucibus libero interdum euismod. Morbi sed magna nisl. Morbi odio nibh, facilisis vel sapien eu, tempus tincidunt erat. Nullam erat velit, sagittis at purus quis, tristique scelerisque tortor. Pellentesque lacinia tortor id est aliquam viverra. Vestibulum et diam ac ipsum mollis fringilla.
+**Core Features:** <br>
+**Task Management:** Users can create, and delete tasks, organizing them into customizable lists for efficient workflow management.<br>
+**Local Storage:** Leveraging the power of local storage, the application stores tasks locally within the user's browser, ensuring data persistence across sessions.<br>
+**Weather Integration:** Utilizing the OpenWeather API, the application provides users with real-time weather updates based on their location, enhancing usability and context.<br>
+**Local Date and Time:** The inclusion of the user's local date and time enhances the user experience, providing valuable context for task scheduling and prioritization.<br>
+**Fully Operational Calculator:** To further expand the application's functionality, I integrated a fully operational calculator, allowing users to perform basic arithmetic calculations directly within the app.
+
+**Technologies Used:** <br>
+**HTML:** For structuring the web pages and defining the content.<br>
+**CSS:** For styling the user interface and enhancing visual appeal.<br>
+**JavaScript:** For implementing interactivity, data manipulation, and integrating external APIs.<br>
+**Local Storage:** For persistently storing user data within the browser.<br>
+**OpenWeather API:** For retrieving real-time weather information based on the user's location.
+
+**Impact and Learning:** <br>
+This project served as a pivotal learning experience, providing me with hands-on exposure to essential web development concepts and technologies. From HTML and CSS for frontend design to JavaScript for dynamic functionality, I gained valuable insights into the fundamentals of web development. Additionally, integrating external APIs like the OpenWeather API expanded my understanding of data fetching and asynchronous programming in JavaScript.
+
+**Conclusion:** <br>
+In conclusion, my to-do list Trello clone project represents the beginning of my journey in web development, laying the foundation for future projects and learning opportunities. Through experimentation, iteration, and hands-on experience, I honed my skills and deepened my understanding of web technologies, setting the stage for continued growth and innovation in the field.

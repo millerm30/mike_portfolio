@@ -1,35 +1,33 @@
 ---
 title: Plate Cove Web Design
-publishDate: 2020-03-02 00:00:00
+publishDate: 2024-05-14 00:00:00
 img: /assets/platcove_project.png
 img_alt: Plat Cove project website design showing main page
 description: |
   Design and devlop the website for the community of Plate Cove, NL!
 tags:
   - Design
-  - Dev
-  - User Testing
+  - Development
+  - Deployment
 ---
 
-## Level-two heading
+## Connecting Plate Cove: Designing a Digital Hub
 
-> Tell me and I forget. Teach me and I remember. Involve me and I learn.
+> Bringing Plate Cove online: A digital gateway to community life.
 
-Lorem ipsum dolor sit amet, <a href="https://astro.build/">Astro</a> makes people happy. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Proin nibh nisl condimentum id venenatis a condimentum vitae. Dapibus ultrices in iaculis nunc. Arcu odio ut sem nulla pharetra diam sit amet. Diam quis enim lobortis scelerisque fermentum dui faucibus in ornare.
+Live address => <a href="https://master--sunny-babka-7f146e.netlify.app/" target="_blank">Website</a> <br>
+Project Repo => <a href="https://github.com/millerm30/trail_blazers" target="_blank">Github Repo</a> <br>
 
-Arcu dui vivamus arcu felis bibendum ut tristique et egestas. Eget gravida cum sociis natoque penatibus. Cras fermentum odio eu feugiat pretium nibh. Proin nibh nisl condimentum id venenatis. Porta nibh venenatis cras sed felis eget velit. Id diam vel quam elementum pulvinar etiam non.
+Designed to reflect the charm and character of Plate Cove, this website offers a seamless user experience across devices, inviting users to explore local events, discover nearby attractions, and engage with community initiatives. This website serves as a vital resource for all who call Plate Cove home as well as visitors looking to explore the area.
 
-### Level-three heading
+As the software developer behind the Plate Cove community website, I took a comprehensive approach to design and development, utilizing a combination of tools and techniques to bring the project to life.
 
-Ultrices tincidunt arcu non sodales neque sodales ut. Sed enim ut sem viverra aliquet eget sit amet. Lacus luctus accumsan tortor posuere ac ut consequat semper viverra. Viverra accumsan in nisl nisi scelerisque eu ultrices. In massa tempor nec feugiat nisl pretium fusce.
+I began by conceptualizing the website's design, drawing inspiration from the natural beauty and unique culture of Plate Cove. Using GIMP, I meticulously crafted logos, icons, and visual elements that capture the essence of our coastal community, ensuring a cohesive and visually appealing aesthetic throughout the website.
 
-### Level-three heading
+Leveraging my expertise in frontend development, I chose Astro as the static site generator for the project, harnessing its power to deliver blazing-fast performance and seamless navigation. With Tailwind CSS, I implemented a responsive and visually stunning design, utilizing its utility-first approach to streamline development and achieve pixel-perfect precision.
 
-Sed pulvinar porttitor mi in ultricies. Etiam non dolor gravida eros pulvinar pellentesque et dictum ex. Proin eu ornare ligula, sed condimentum dui. Vivamus tincidunt tellus mi, sed semper ipsum pharetra a. Suspendisse sollicitudin at sapien nec volutpat. Etiam justo urna, laoreet ac lacus sed, ultricies facilisis dolor. Integer posuere, metus vel viverra gravida, risus elit ornare magna, id feugiat erat risus ullamcorper libero. Proin vitae diam auctor, laoreet lorem vitae, varius tellus.
+Throughout the development process, I prioritized user experience, conducting thorough testing and optimization to ensure the website is intuitive, accessible, and enjoyable to navigate across devices and screen sizes. From smooth animations to intuitive navigation menus, every aspect of the user interface was meticulously crafted to enhance the overall experience for visitors.
 
-Aenean pretium purus augue, ut bibendum erat convallis quis. Cras condimentum quis velit ac mollis. Suspendisse non purus fringilla, venenatis nisl porta, finibus odio. Curabitur aliquet metus faucibus libero interdum euismod. Morbi sed magna nisl. Morbi odio nibh, facilisis vel sapien eu, tempus tincidunt erat. Nullam erat velit, sagittis at purus quis, tristique scelerisque tortor. Pellentesque lacinia tortor id est aliquam viverra. Vestibulum et diam ac ipsum mollis fringilla.
+Collaboration and iteration were key components of the development process, as I worked closely with stakeholders to gather feedback, iterate on design concepts, and refine functionality to meet the evolving needs of the Plate Cove community.
 
-#### Level-four heading
-
-- We noted this
-- And also this other point
+In summary, as the software developer responsible for the Plate Cove community website, I utilized a combination of design tools, frontend and backend development techniques, and a commitment to user experience optimization to create a visually stunning, performant, and user-friendly digital platform that embodies the spirit of our coastal community."

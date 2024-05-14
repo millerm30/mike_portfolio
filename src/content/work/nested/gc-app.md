@@ -7,7 +7,7 @@ description: |
   Build and maintain mobile & web applications.
 tags:
   - Design
-  - Dev
+  - Development
   - Testing
 ---
 
