@@ -1,120 +1,142 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
 
-import ContactCTA from '../components/ContactCTA.astro';
-import Hero from '../components/Hero.astro';
+import ContactCTA from "../components/ContactCTA.astro";
+import Hero from "../components/Hero.astro";
 ---
 
 <BaseLayout title="About | Michael Miller" description="About Michael Miller">
-	<div class="stack gap-20">
-		<main class="wrapper about">
-			<Hero
-				title="About"
-				tagline="Thanks for stopping by. Read below to learn more about myself and my background."
-			>
-				<img
-					width="1553"
-					height="873"
-					src="/assets/at-work.jpg"
-					alt="Jeanine White at work with a colleague"
-				/>
-			</Hero>
+  <div class="stack gap-20">
+    <main class="wrapper about">
+      <Hero
+        title="About"
+        tagline="Thanks for stopping by. Read below to learn more about myself and my background."
+      >
+        <img
+          width="1553"
+          height="873"
+          src="/assets/profilephoto_two.jpg"
+          alt="Michael volunteering at a local event in his community."
+        />
+      </Hero>
 
-			<section>
-				<h2 class="section-title">Background</h2>
-				<div class="content">
-					<p>
-						Lorem ipsum dolor sit amet, <a href="https://astro.build/">Astro</a> makes people happy.
-						Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Proin nibh nisl condimentum
-						id venenatis a condimentum vitae. Dapibus ultrices in iaculis nunc. Arcu odio ut sem nulla
-						pharetra diam sit amet. Diam quis enim lobortis scelerisque fermentum dui faucibus in ornare.
-					</p>
-					<p>
-						Arcu dui vivamus arcu felis bibendum ut tristique et egestas. Eget gravida cum sociis
-						natoque penatibus. Cras fermentum odio eu feugiat pretium nibh. Proin nibh nisl
-						condimentum id venenatis. Porta nibh venenatis cras sed felis eget velit. Id diam vel
-						quam elementum pulvinar etiam non.
-					</p>
-					<p>
-						Ultrices tincidunt arcu non sodales neque sodales ut. Sed enim ut sem viverra aliquet
-						eget sit amet. Lacus luctus accumsan tortor posuere ac ut consequat semper viverra.
-						Viverra accumsan in nisl nisi scelerisque eu ultrices. In massa tempor nec feugiat nisl
-						pretium fusce.
-					</p>
-				</div>
-			</section>
-			<section>
-				<h2 class="section-title">Education</h2>
-				<div class="content">
-					<p>Corporis voluptates tenetur laudantium.</p>
-				</div>
-			</section>
-			<section>
-				<h2 class="section-title">Skills</h2>
-				<div class="content">
-					<p>officia unde omnis</p>
-				</div>
-			</section>
-		</main>
+      <section>
+        <h2 class="section-title">Background</h2>
+        <div class="content">
+          <p>
+            As a Mobile Application Developer in Newfoundland, I'm deeply
+            immersed in crafting innovative mobile experiences. Leveraging my
+            construction background, I've honed my skills in planning and
+            problem-solving to ensure efficient development processes. This
+            transition into software development follows a successful tenure in
+            construction and project management, where I thrived on navigating
+            complex projects and leading teams to success. My recent completion
+            of the Full Stack Development program from Get Coding reflects my
+            commitment to evolving in this dynamic field. I'm committed to
+            learning and ready to bring my diverse expertise to dynamic teams.
+          </p>
+        </div>
+      </section>
+      <section>
+        <h2 class="section-title">Education</h2>
+        <div class="content">
+          <p>Get Coding Training Inc.</p>
+          <a
+            href="https://getcoding.ca"
+            target="_blank"
+            rel="noopener noreferrer">Get Coding</a
+          >
+          <p>Full Stack Development</p>
+          <p>Jan 2022 - March 2023</p>
+          <p>
+            After spending a few years wishing I had made the jump to tech, I
+            finally made the decision and joined Get Coding, I attend weekly
+            sessions with professional software developers learning the latest
+            for full stack development in ReactJS, NodeJS, Postgresql and AWS.
+          </p>
+        </div>
+      </section>
+      <section>
+        <h2 class="section-title">Skills</h2>
+        <div class="content">
+          <p>
+            As a versatile full-stack and mobile application developer, I bring
+            proficiency in a wide array of technologies to the table. My
+            foundation in HTML, CSS, JavaScript, and TypeScript allows me to
+            craft dynamic and visually appealing web experiences. I am adept at
+            leveraging frameworks like React and React Native to build
+            responsive and feature-rich front-end applications, while my
+            expertise in Node.js empowers me to create robust server-side
+            solutions. With a solid grasp of database technologies including
+            PostgreSQL, MySQL, and DynamoDB, I ensure seamless data management
+            and persistence in my projects. Additionally, my familiarity with
+            AWS enables me to deploy scalable and reliable applications with
+            ease. Whether it's designing elegant user interfaces or architecting
+            scalable backend systems, I am equipped to deliver solutions that
+            exceed expectations.
+          </p>
+        </div>
+      </section>
+    </main>
 
-		<ContactCTA />
-	</div>
+    <ContactCTA />
+  </div>
 </BaseLayout>
 
 <style>
-	.about {
-		display: flex;
-		flex-direction: column;
-		gap: 3.5rem;
-	}
+  .about {
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+  }
 
-	img {
-		margin-top: 1.5rem;
-		border-radius: 1.5rem;
-		box-shadow: var(--shadow-md);
-	}
+  img {
+    margin-top: 1.5rem;
+    border-radius: 1.5rem;
+    box-shadow: var(--shadow-md);
+  }
 
-	section {
-		display: flex;
-		flex-direction: column;
-		gap: 0.5rem;
-		color: var(--gray-200);
-	}
+  section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    color: var(--gray-200);
+  }
 
-	.section-title {
-		grid-column-start: 1;
-		font-size: var(--text-xl);
-		color: var(--gray-0);
-	}
+  .section-title {
+    grid-column-start: 1;
+    font-size: var(--text-xl);
+    color: var(--gray-0);
+  }
 
-	.content {
-		grid-column: 2 / 4;
-	}
+  .content {
+    grid-column: 2 / 4;
+  }
 
-	.content :global(a) {
-		text-decoration: 1px solid underline transparent;
-		text-underline-offset: 0.25em;
-		transition: text-decoration-color var(--theme-transition);
-	}
+  .content :global(a) {
+    text-decoration: 1px solid underline transparent;
+    text-underline-offset: 0.25em;
+    transition: text-decoration-color var(--theme-transition);
+  }
 
-	.content :global(a:hover),
-	.content :global(a:focus) {
-		text-decoration-color: currentColor;
-	}
+  .content :global(a:hover),
+  .content :global(a:focus) {
+    text-decoration-color: currentColor;
+  }
 
-	@media (min-width: 50em) {
-		.about {
-			display: grid;
-			grid-template-columns: 1fr 60% 1fr;
-		}
+  @media (min-width: 50em) {
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 60% 1fr;
+    }
 
-		.about > :global(:first-child) {
-			grid-column-start: 2;
-		}
+    .about > :global(:first-child) {
+      grid-column-start: 2;
+    }
 
-		section {
-			display: contents;
-			font-size: var(--text-lg);
-		}
-	}
+    section {
+      display: contents;
+      font-size: var(--text-lg);
+    }
+  }
 </style>

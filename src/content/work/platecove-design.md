@@ -1,8 +1,8 @@
 ---
 title: Plate Cove Web Design
 publishDate: 2020-03-02 00:00:00
-img: /assets/stock-1.jpg
-img_alt: Iridescent ripples of a bright blue and pink liquid
+img: /assets/platcove_project.png
+img_alt: Plat Cove project website design showing main page
 description: |
   Design and devlop the website for the community of Plate Cove, NL!
 tags:
