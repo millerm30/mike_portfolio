@@ -1,7 +1,7 @@
 ---
 title: To-Do List
 publishDate: 2019-10-02 00:00:00
-img: /assets/todo_project.png
+img: /mike_portfolio/assets/todo_project.png
 img_alt: Soft pink and baby blue water ripples together in a subtle texture.
 description: |
   Intro to web dev project with Get Coding.

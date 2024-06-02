@@ -1,7 +1,7 @@
 ---
 title: GC App
 publishDate: 2020-03-04 00:00:00
-img: /assets/gcapp_project.png
+img: /mike_portfolio/assets/gcapp_project.png
 img_alt: Pearls of silky soft white cotton, bubble up under vibrant lighting
 description: |
   Develop and maintain fullstack and mobile applications for Get Coding Training Inc., enhancing their ability to track students and coaches effectively.
