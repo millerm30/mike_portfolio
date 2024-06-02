@@ -4,18 +4,26 @@ import '../styles/global.css';
 interface Props {
 	title?: string | undefined;
 	description?: string | undefined;
+	keywords?: string | undefined;
 }
 
 const {
-	title = 'Michael Miller: Personal Site',
-	description = 'The personal site of Michael Miller',
+	title = 'Michael Miller: Software Developer',
+	description = 'The personal site of Michael Miller, a software developer based in Newfoundland, Canada.',
+	keywords = 'Michael Miller, Software Developer, Mobile Developer, Web Developer, Get Coding, Full-Stack Developer, Newfoundland, Canada',
 } = Astro.props;
 ---
 
 <meta charset="UTF-8" />
 <meta name="description" property="og:description" content={description} />
+<meta name="keywords" content={keywords} />
 <meta name="viewport" content="width=device-width" />
 <meta name="generator" content={Astro.generator} />
+<meta name="author" content="Michael Miller" />
+<meta property="og:site_name" content="Michael Miller" />
+<meta property="og:title" content={title} />
+<meta property="og:type" content="website" />
+<meta property="og:description" content={description} />
 <title>{title}</title>
 
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
