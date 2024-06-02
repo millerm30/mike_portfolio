@@ -1,7 +1,7 @@
 ---
 title: Plate Cove Web Design
 publishDate: 2024-05-14 00:00:00
-img: /mike_portfolio/assets/platcove_project.png
+img: /assets/platcove_project.png
 img_alt: Plat Cove project website design showing main page
 description: |
   Design and devlop the website for the community of Plate Cove, NL!
