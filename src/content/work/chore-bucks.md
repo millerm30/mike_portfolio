@@ -8,8 +8,6 @@ description: |
 tags:
   - Design
   - Development
-  - Testing
-  - Deployment
 ---
 
 > Crafting chores into adventures: A full-stack marvel.
