@@ -1,6 +1,6 @@
 ---
 title: Plate Cove Web Design
-publishDate: 2024-05-14 00:00:00
+publishDate: 2023-01-14 00:00:00
 img: /assets/platcove_project.png
 img_alt: Plat Cove project website design showing main page
 description: |
