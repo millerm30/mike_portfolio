@@ -17,6 +17,10 @@ As the Fullstack and Mobile Application Developer at Get Coding Training Inc., I
 
 Company Website: <a href="https://www.getcoding.ca" target="_blank">Company Website</a>
 
+Google Play Store: <a href="https://play.google.com/store/apps/details?id=ca.getcoding.app" target="_blank">Google Play Store</a>
+
+Apple Store: <a href="https://apps.apple.com/ca/app/get-coding/id6444653874" target="_blank">Apple Store</a>
+
 ### Achievements:
 
 - **Enhanced Tracking System:** Successfully revamped the student and coach tracking system, improving data accuracy and user experience.
