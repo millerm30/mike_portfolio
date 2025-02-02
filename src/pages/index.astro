@@ -20,7 +20,7 @@ import Skills from "../components/Skills.astro";
 let projects = (await getCollection("work"))
   .sort((a, b) => a.data.publishDate.valueOf() - b.data.publishDate.valueOf())
 
-const slugsToRemove = ["todo-trello", "platecove-design"];
+const slugsToRemove = ["todo-trello", "platecove-design", "chore-bucks"];
 
 projects = projects.filter((project) => !slugsToRemove.includes(project.slug));
 
