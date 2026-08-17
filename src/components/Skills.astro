@@ -2,80 +2,113 @@
 import Icon from "./Icon.astro";
 ---
 
-<section class="box skills">
-  <div class="stack gap-2 lg:gap-4">
-    <Icon
-      icon="terminal-window"
-      color="var(--accent-regular)"
-      size="2.5rem"
-      gradient
-    />
+<section class="skills">
+  <article class="card" data-reveal>
+    <div class="icon-wrap">
+      <Icon icon="terminal-window" color="var(--accent-bright)" size="1.8rem" gradient />
+    </div>
     <h2>Full Stack Development</h2>
     <p>
       I build across the dashboard, APIs, and AWS serverless backends — React
       and TypeScript on the front, Lambda and DynamoDB on the back.
     </p>
-  </div>
-  <div class="stack gap-2 lg:gap-4">
-    <Icon icon="code" color="var(--accent-regular)" size="2.5rem" gradient />
+  </article>
+  <article class="card" data-reveal>
+    <div class="icon-wrap">
+      <Icon icon="code" color="var(--accent-bright)" size="1.8rem" gradient />
+    </div>
     <h2>Developer Experience</h2>
     <p>
       SDKs, CLI, docs, and CI integrations so other developers can send email
       and SMS without fighting the platform.
     </p>
-  </div>
-  <div class="stack gap-2 lg:gap-4">
-    <Icon
-      icon="strategy"
-      color="var(--accent-regular)"
-      size="2.5rem"
-      gradient
-    />
+  </article>
+  <article class="card" data-reveal>
+    <div class="icon-wrap">
+      <Icon icon="strategy" color="var(--accent-bright)" size="1.8rem" gradient />
+    </div>
     <h2>Cloud Platforms</h2>
     <p>
       Shipping on real AWS: serverless APIs, messaging pipelines, infrastructure
       as code, and tests that hit production-shaped environments.
     </p>
-  </div>
+  </article>
 </section>
 
 <style>
-  .box {
-    border: 1px solid var(--gray-800);
-    border-radius: 0.75rem;
-    padding: 1.5rem;
-    background-color: var(--gray-999_40);
-    box-shadow: var(--shadow-sm);
+  .skills {
+    display: grid;
+    gap: 1rem;
   }
 
-  .skills {
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
+  .card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 1.35rem;
+    padding: 1.5rem;
+    background: var(--surface);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--shadow-sm);
+    transition:
+      transform 0.4s var(--ease-out),
+      box-shadow 0.4s var(--ease-out),
+      border-color 0.4s var(--ease-out);
+  }
+
+  .card::before {
+    content: "";
+    position: absolute;
+    inset: auto -20% 0 auto;
+    width: 9rem;
+    height: 9rem;
+    background: radial-gradient(circle, var(--glow-violet), transparent 70%);
+    opacity: 0.45;
+    pointer-events: none;
+  }
+
+  .card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-glow);
+    border-color: color-mix(in srgb, var(--accent-bright) 40%, var(--glass-border));
+  }
+
+  .icon-wrap {
+    display: grid;
+    place-items: center;
+    width: 3rem;
+    height: 3rem;
+    margin-bottom: 1.1rem;
+    border-radius: 0.9rem;
+    background: var(--accent-overlay);
+    border: 1px solid var(--glass-border);
   }
 
   .skills h2 {
     font-size: var(--text-lg);
+    margin-bottom: 0.45rem;
   }
 
   .skills p {
-    color: var(--gray-400);
+    color: var(--gray-300);
+    font-size: var(--text-sm);
   }
 
   @media (min-width: 50em) {
-    .box {
-      border-radius: 1.5rem;
-      padding: 2.5rem;
+    .skills {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
     }
 
-    .skills {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 5rem;
+    .card {
+      padding: 1.85rem;
     }
 
     .skills h2 {
-      font-size: var(--text-2xl);
+      font-size: 1.45rem;
+    }
+
+    .skills p {
+      font-size: var(--text-base);
     }
   }
 </style>

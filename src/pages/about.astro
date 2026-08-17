@@ -9,8 +9,9 @@ import Hero from "../components/Hero.astro";
   <div class="stack gap-20">
     <main class="wrapper about">
       <Hero
-        title="About"
-        tagline="Thanks for stopping by. Read below to learn more about myself and my background."
+        kicker="The longer version"
+        title="Builder with a project-manager's brain."
+        tagline="Construction taught me how to sequence work. Software is how I ship it."
       >
         <img
           width="1553"
@@ -20,7 +21,7 @@ import Hero from "../components/Hero.astro";
         />
       </Hero>
 
-      <section>
+      <section data-reveal>
         <h2 class="section-title">Background</h2>
         <div class="content">
           <p>
@@ -38,47 +39,53 @@ import Hero from "../components/Hero.astro";
           </p>
         </div>
       </section>
-      <section>
+
+      <section class="timeline-section" data-reveal>
         <h2 class="section-title">Experience</h2>
-        <div class="content">
-          <p>Pingram (formerly NotificationAPI)</p>
-          <p>Full Stack Software Developer</p>
-          <p>2024 – present</p>
-          <p>
-            Product engineering across the dashboard, serverless backend, SDKs,
-            CLI, GitHub Actions integrations, and documentation. Most of the
-            work is TypeScript on AWS: Lambda, API Gateway, DynamoDB, SES, and
-            the surrounding observability and CI.
-          </p>
-          <p>Get Coding Training Inc.</p>
-          <p>Full Stack and Mobile Application Developer</p>
-          <p>2023 – 2024</p>
-          <p>
-            Built and maintained the student/coach tracking product across web
-            and React Native, including student-facing mobile features and a
-            recruitment dashboard for partner companies.
-          </p>
-        </div>
+        <ol class="timeline">
+          <li>
+            <p class="when">2024 – present</p>
+            <div>
+              <h3>Pingram <span>(formerly NotificationAPI)</span></h3>
+              <p class="role">Full Stack Software Developer</p>
+              <p>
+                Product engineering across the dashboard, serverless backend, SDKs,
+                CLI, GitHub Actions integrations, and documentation. Most of the
+                work is TypeScript on AWS: Lambda, API Gateway, DynamoDB, SES, and
+                the surrounding observability and CI.
+              </p>
+            </div>
+          </li>
+          <li>
+            <p class="when">2023 – 2024</p>
+            <div>
+              <h3>Get Coding Training Inc.</h3>
+              <p class="role">Full Stack and Mobile Application Developer</p>
+              <p>
+                Built and maintained the student/coach tracking product across web
+                and React Native, including student-facing mobile features and a
+                recruitment dashboard for partner companies.
+              </p>
+            </div>
+          </li>
+        </ol>
       </section>
-      <section>
+
+      <section data-reveal>
         <h2 class="section-title">Education</h2>
         <div class="content">
-          <p>Get Coding Training Inc.</p>
-          <a
-            href="https://getcoding.ca"
-            target="_blank"
-            rel="noopener noreferrer">Get Coding</a
-          >
-          <p>Full Stack Development</p>
+          <p class="role">Get Coding · Full Stack Development</p>
           <p>Jan 2022 – March 2023</p>
           <p>
-            After a few years wanting to move into tech, I joined Get Coding and
-            trained weekly with working software developers in React, Node.js,
+            After a few years wanting to move into tech, I joined
+            <a href="https://getcoding.ca" target="_blank" rel="noopener noreferrer">Get Coding</a>
+            and trained weekly with working software developers in React, Node.js,
             PostgreSQL, and AWS.
           </p>
         </div>
       </section>
-      <section>
+
+      <section data-reveal>
         <h2 class="section-title">Skills</h2>
         <div class="content">
           <p>
@@ -89,6 +96,16 @@ import Hero from "../components/Hero.astro";
             docs in Astro, and CI with GitHub Actions. Earlier work includes
             React Native, PostgreSQL, and GraphQL/AppSync.
           </p>
+          <ul class="chips">
+            <li>TypeScript</li>
+            <li>React</li>
+            <li>AWS Lambda</li>
+            <li>DynamoDB</li>
+            <li>CDK</li>
+            <li>OpenAPI</li>
+            <li>GitHub Actions</li>
+            <li>Astro</li>
+          </ul>
         </div>
       </section>
     </main>
@@ -106,25 +123,30 @@ import Hero from "../components/Hero.astro";
 
   img {
     margin-top: 1.5rem;
-    border-radius: 1.5rem;
-    box-shadow: var(--shadow-md);
+    width: 100%;
+    max-height: 28rem;
+    object-fit: cover;
+    object-position: center 20%;
+    border-radius: 1.6rem;
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--glass-border);
   }
 
   section {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 0.75rem;
     color: var(--gray-200);
   }
 
   .section-title {
-    grid-column-start: 1;
     font-size: var(--text-xl);
     color: var(--gray-0);
   }
 
   .content {
-    grid-column: 2 / 4;
+    display: grid;
+    gap: 0.85rem;
   }
 
   .content :global(a) {
@@ -138,19 +160,72 @@ import Hero from "../components/Hero.astro";
     text-decoration-color: currentColor;
   }
 
+  .timeline {
+    list-style: none;
+    display: grid;
+    gap: 1.25rem;
+    padding: 0;
+  }
+
+  .timeline li {
+    display: grid;
+    gap: 0.35rem;
+    padding: 1.25rem 1.2rem;
+    border-radius: 1.2rem;
+    border: 1px solid var(--glass-border);
+    background: var(--surface);
+  }
+
+  .when {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent-bright);
+  }
+
+  .timeline h3 {
+    font-size: var(--text-lg);
+  }
+
+  .timeline h3 span {
+    font-weight: 500;
+    color: var(--gray-400);
+    font-size: 0.85em;
+  }
+
+  .role {
+    font-weight: 600;
+    color: var(--gray-100);
+  }
+
+  .chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    list-style: none;
+    padding: 0.4rem 0 0;
+  }
+
+  .chips li {
+    padding: 0.35rem 0.75rem;
+    border-radius: 999px;
+    border: 1px solid var(--glass-border);
+    background: var(--surface);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+  }
+
   @media (min-width: 50em) {
     .about {
-      display: grid;
-      grid-template-columns: 1fr 60% 1fr;
+      max-width: 52rem;
+      margin-inline: auto;
     }
 
-    .about > :global(:first-child) {
-      grid-column-start: 2;
-    }
-
-    section {
-      display: contents;
-      font-size: var(--text-lg);
+    .timeline li {
+      grid-template-columns: 9.5rem 1fr;
+      gap: 1.5rem;
+      padding: 1.5rem 1.6rem;
     }
   }
 </style>

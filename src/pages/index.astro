@@ -1,30 +1,21 @@
 ---
 import { getCollection } from "astro:content";
 
-// Layout import — provides basic page elements: <head>, <nav>, <footer> etc.
 import BaseLayout from "../layouts/BaseLayout.astro";
-
-// Component Imports
 import CallToAction from "../components/CallToAction.astro";
 import Grid from "../components/Grid.astro";
-import Hero from "../components/Hero.astro";
 import Icon from "../components/Icon.astro";
 import Pill from "../components/Pill.astro";
-import PortfolioPreview from "../components/PortfolioPreview.astro";
-
-// Page section components
 import ContactCTA from "../components/ContactCTA.astro";
 import Skills from "../components/Skills.astro";
 
-// Content Fetching: List four most recent work projects
 let projects = (await getCollection("work"))
-  .sort((a, b) => a.data.publishDate.valueOf() - b.data.publishDate.valueOf())
+  .sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf());
 
 const slugsToRemove = ["todo-trello", "platecove-design", "chore-bucks"];
 
 projects = projects.filter((project) => !slugsToRemove.includes(project.slug));
 
-// Images for the brand mentions section
 const mentions = [
   {
     name: "mentionOne",
@@ -60,67 +51,110 @@ const mentions = [
 ---
 
 <BaseLayout>
-  <div class="stack gap-20 lg:gap-48">
-    <div class="wrapper stack gap-8 lg:gap-20">
+  <div class="stack gap-20 lg:gap-30">
+    <div class="wrapper stack gap-15">
       <header class="hero">
-        <Hero
-          title="Hello, my name is Michael Miller"
-          tagline="I'm a full-stack software developer at Pingram, currently based in Mount Pearl, Newfoundland."
-          align="start"
-        >
-          <div class="roles">
-            <Pill><Icon icon="code" size="1.33em" /> Full-Stack Developer</Pill>
-            <Pill><Icon icon="terminal-window" size="1.33em" /> Cloud & APIs</Pill>
+        <div class="hero-copy" data-reveal>
+          <p class="kicker">
+            <span class="live-dot"></span>
+            Building at Pingram · Newfoundland
+          </p>
+          <h1>
+            I ship the products
+            <span class="text-gradient">developers build on.</span>
+          </h1>
+          <p class="lede">
+            Full-stack software developer working across React, TypeScript, and
+            AWS — from dashboard to delivery pipeline.
+          </p>
+          <div class="hero-actions">
+            <CallToAction href="/work/">
+              See the work
+              <Icon icon="arrow-right" size="1.1em" />
+            </CallToAction>
+            <a class="ghost" href="mailto:millergm30@gmail.com">
+              Get in touch
+              <Icon icon="paper-plane-tilt" size="1.05em" />
+            </a>
           </div>
-        </Hero>
+          <div class="roles">
+            <Pill><Icon icon="code" size="1.2em" /> Full-Stack Developer</Pill>
+            <Pill><Icon icon="terminal-window" size="1.2em" /> Cloud & APIs</Pill>
+          </div>
+        </div>
 
-        <img
-          alt="Michael Miller profile photo"
-          width="300"
-          height="300"
-          src="/assets/michael_miller.png"
-        />
+        <div class="hero-visual" data-reveal="right">
+          <div class="photo-orbit" aria-hidden="true"></div>
+          <figure class="photo-frame">
+            <img
+              alt="Michael Miller profile photo"
+              width="480"
+              height="480"
+              src="/assets/michael_miller.png"
+            />
+          </figure>
+        </div>
       </header>
 
       <Skills />
     </div>
 
-    <main class="wrapper stack gap-20 lg:gap-48">
-      <section class="section with-background with-cta">
-        <header class="section-header stack gap-2 lg:gap-4">
-          <h3>Selected Work</h3>
+    <main class="wrapper stack gap-20 lg:gap-30">
+      <section class="section">
+        <header class="section-header stack gap-2 lg:gap-4" data-reveal>
+          <p class="kicker">Selected work</p>
+          <h3>Shipped products, not just demos.</h3>
           <p>
-            Take a look below at some of my featured projects. Each project
-            showcases a different set of skills and technologies.
+            Real platforms and tools — dashboards, APIs, SDKs, and the
+            infrastructure that keeps them moving.
           </p>
         </header>
 
-        <div class="gallery">
-          <Grid variant="offset">
-            {
-              projects.map((project) => (
-                <li>
-                  <PortfolioPreview project={project} />
-                </li>
-              ))
-            }
-          </Grid>
+        <div class="shipped">
+          {
+            projects.map((project, index) => (
+              <a
+                class:list={["featured", { flip: index % 2 === 1 }]}
+                href={`/work/${project.slug}`}
+                data-reveal
+              >
+                <img
+                  src={project.data.img}
+                  alt={project.data.img_alt || project.data.title}
+                />
+                <div class="featured-copy">
+                  <h4>{project.data.title}</h4>
+                  <p>{project.data.description}</p>
+                  <div class="featured-tags">
+                    {project.data.tags.map((tag) => (
+                      <span>{tag}</span>
+                    ))}
+                  </div>
+                  <span class="featured-link">
+                    Read the case
+                    <Icon icon="arrow-right" size="1em" />
+                  </span>
+                </div>
+              </a>
+            ))
+          }
         </div>
 
-        <div class="cta">
+        <div class="cta" data-reveal>
           <CallToAction href="/work/">
-            View All
+            View all work
             <Icon icon="arrow-right" size="1.2em" />
           </CallToAction>
         </div>
       </section>
 
-      <section class="section with-background bg-variant">
-        <header class="section-header stack gap-2 lg:gap-4">
+      <section class="section">
+        <header class="section-header stack gap-2 lg:gap-4" data-reveal>
+          <p class="kicker">Signal from the people I work with</p>
           <h3>User Feedback</h3>
           <p>
-            I have been fortunate enough to receive praise for my work in
-            several areas. Take a look below.
+            Slack notes from teammates and collaborators — the kind you get
+            when the work actually lands.
           </p>
         </header>
 
@@ -128,10 +162,12 @@ const mentions = [
           <Grid variant="small">
             {
               mentions.map((brand) => (
-                <li class="mention-card">
-                  <p>{brand.userName}</p>
-                  <p>{brand.userInfo}</p>
-                  <img src={brand.image} alt={brand.name} />
+                <li class="mention-card" data-reveal>
+                  <div class="mention-meta">
+                    <p class="mention-name">{brand.userName}</p>
+                    <p class="mention-role">{brand.userInfo}</p>
+                  </div>
+                  <img src={brand.image} alt={`Message from ${brand.userName}`} />
                 </li>
               ))
             }
@@ -149,155 +185,306 @@ const mentions = [
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2rem;
+    gap: 2.5rem;
+    padding-top: 1rem;
+  }
+
+  .hero-copy {
+    display: grid;
+    gap: 1.35rem;
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.5rem, 8vw, 5.4rem);
+    max-width: 14ch;
+    margin-inline: auto;
+  }
+
+  .hero h1 span {
+    display: block;
+  }
+
+  .lede {
+    max-width: 38ch;
+    margin-inline: auto;
+    font-size: var(--text-md);
+    color: var(--gray-300);
+  }
+
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+  }
+
+  .ghost {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    padding: 0.85em 1.4em;
+    border-radius: 999px;
+    text-decoration: none;
+    color: var(--gray-0);
+    border: 1px solid var(--glass-border);
+    background: var(--surface);
+    font-family: var(--font-brand);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    transition:
+      transform 0.3s var(--ease-out),
+      border-color 0.3s var(--ease-out),
+      box-shadow 0.3s var(--ease-out);
+  }
+
+  .ghost:hover,
+  .ghost:focus-visible {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    border-color: color-mix(in srgb, var(--accent-bright) 50%, var(--glass-border));
   }
 
   .roles {
-    display: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
   }
 
-  .hero img {
-    /*aspect-ratio: 5 / 4;*/
+  .hero-visual {
+    position: relative;
+    width: min(22rem, 80vw);
+    aspect-ratio: 1;
+    display: grid;
+    place-items: center;
+  }
+
+  .photo-orbit {
+    position: absolute;
+    inset: -8%;
+    border-radius: 50%;
+    background: conic-gradient(
+      from 180deg,
+      var(--accent-regular),
+      var(--accent-secondary),
+      #f472b6,
+      var(--accent-regular)
+    );
+    filter: blur(0.5px);
+    opacity: 0.85;
+    mask: radial-gradient(farthest-side, transparent calc(100% - 8px), #000 calc(100% - 7px));
+    -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 8px), #000 calc(100% - 7px));
+  }
+
+  .photo-frame {
+    position: relative;
+    width: 86%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg), 0 0 60px var(--glow-violet);
+  }
+
+  .photo-frame img {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     object-position: top;
-    /*border-radius: 1.5rem;*/
-    /*box-shadow: var(--shadow-md);*/
-    justify-self: center;
   }
-
-  @media (min-width: 50em) {
-    .hero {
-      display: grid;
-      grid-template-columns: 6fr 4fr;
-      padding-inline: 2.5rem;
-      gap: 3.75rem;
-    }
-
-    .roles {
-      margin-top: 0.5rem;
-      display: flex;
-      gap: 0.5rem;
-    }
-
-    .hero img {
-      /*aspect-ratio: 3 / 4;*/
-      /*border-radius: 4.5rem;*/
-      object-fit: cover;
-      justify-self: center;
-    }
-  }
-
-  /* ====================================================== */
 
   .section {
     display: grid;
     gap: 2rem;
   }
 
-  .with-background {
-    position: relative;
-  }
-
-  .with-background::before {
-    --hero-bg: var(--bg-image-subtle-2);
-
-    content: "";
-    position: absolute;
-    pointer-events: none;
-    left: 50%;
-    width: 100vw;
-    aspect-ratio: calc(2.25 / var(--bg-scale));
-    top: 0;
-    transform: translateY(-75%) translateX(-50%);
-    background:
-      url("/assets/backgrounds/noise.png") top center/220px repeat,
-      var(--hero-bg) center center / var(--bg-gradient-size) no-repeat,
-      var(--gray-999);
-    background-blend-mode: overlay, normal, normal, normal;
-    mix-blend-mode: var(--bg-blend-mode);
-    z-index: -1;
-  }
-
-  .with-background.bg-variant::before {
-    --hero-bg: var(--bg-image-subtle-1);
-  }
-
   .section-header {
     justify-self: center;
     text-align: center;
-    max-width: 50ch;
+    max-width: 46ch;
     font-size: var(--text-md);
     color: var(--gray-300);
   }
 
   .section-header h3 {
+    font-size: clamp(2rem, 4vw, 3.2rem);
+  }
+
+  .featured {
+    display: grid;
+    overflow: hidden;
+    border-radius: 1.6rem;
+    border: 1px solid var(--glass-border);
+    background: var(--surface);
+    text-decoration: none;
+    color: inherit;
+    box-shadow: var(--shadow-md);
+    transition:
+      transform 0.45s var(--ease-out),
+      box-shadow 0.45s var(--ease-out);
+  }
+
+  .featured:hover,
+  .featured:focus-visible {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-glow);
+  }
+
+  .featured img {
+    width: 100%;
+    height: 16rem;
+    object-fit: cover;
+    object-position: top;
+  }
+
+  .featured-copy {
+    display: grid;
+    gap: 0.7rem;
+    padding: 1.4rem 1.35rem 1.5rem;
+  }
+
+  .featured-copy h4 {
     font-size: var(--text-2xl);
   }
 
+  .featured-copy p {
+    color: var(--gray-300);
+  }
+
+  .featured-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .featured-tags span {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.04em;
+    padding: 0.3rem 0.65rem;
+    border-radius: 999px;
+    border: 1px solid var(--glass-border);
+    color: var(--gray-100);
+  }
+
+  .featured-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: var(--accent-bright);
+    font-family: var(--font-brand);
+    font-weight: 700;
+  }
+
+  .shipped {
+    display: grid;
+    gap: 1.25rem;
+  }
+
+  .cta {
+    justify-self: center;
+  }
+
+  .mention-card {
+    display: grid;
+    gap: 0.7rem;
+    padding: 1rem;
+    border-radius: 1.25rem;
+    border: 1px solid var(--glass-border);
+    background: var(--surface);
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.35s var(--ease-out), box-shadow 0.35s var(--ease-out);
+  }
+
+  .mention-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-glow);
+  }
+
+  .mention-name {
+    font-family: var(--font-brand);
+    font-weight: 700;
+    color: var(--gray-0);
+  }
+
+  .mention-role {
+    font-size: var(--text-sm);
+    color: var(--gray-400);
+  }
+
+  .mention-card img {
+    width: 100%;
+    border-radius: 0.9rem;
+  }
+
   @media (min-width: 50em) {
-    .section {
-      grid-template-columns: repeat(4, 1fr);
-      grid-template-areas: "header header header header" "gallery gallery gallery gallery";
-      gap: 5rem;
+    .hero {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      align-items: center;
+      gap: 3rem;
+      min-height: min(78vh, 46rem);
+      padding-inline: 0.5rem;
     }
 
-    .section.with-cta {
-      grid-template-areas: "header header header cta" "gallery gallery gallery gallery";
+    .hero-copy {
+      text-align: start;
+      justify-items: start;
     }
 
-    .section-header {
-      grid-area: header;
+    .hero h1,
+    .lede {
+      margin-inline: unset;
+    }
+
+    .hero-actions,
+    .roles {
+      justify-content: flex-start;
+    }
+
+    .lede {
       font-size: var(--text-lg);
     }
 
-    .section-header h3 {
-      font-size: var(--text-4xl);
+    .hero-visual {
+      width: min(28rem, 100%);
+      justify-self: end;
     }
 
-    .with-cta .section-header {
-      justify-self: flex-start;
+    .section {
+      gap: 2.5rem;
+    }
+
+    .section-header {
+      justify-self: start;
       text-align: left;
+      max-width: 42ch;
     }
 
-    .gallery {
-      grid-area: gallery;
+    .featured {
+      grid-template-columns: 1.35fr 1fr;
+      min-height: 22rem;
+    }
+
+    .featured.flip {
+      grid-template-columns: 1fr 1.35fr;
+    }
+
+    .featured.flip img {
+      order: 2;
+    }
+
+    .featured img {
+      height: 100%;
+    }
+
+    .featured-copy {
+      align-content: center;
+      padding: 2rem;
     }
 
     .cta {
-      grid-area: cta;
-    }
-  }
-
-  /* ====================================================== */
-  /*
-	.mention-card {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		border: 1px solid var(--gray-800);
-		border-radius: 1.5rem;
-		color: var(--gray-300);
-		background: var(--gradient-subtle);
-		box-shadow: var(--shadow-sm);
-	}
-	*/
-
-  .mention-card img {
-    max-height: 100%;
-    max-width: 100%;
-    border-radius: 1rem;
-  }
-
-  .mention-card p {
-    font-size: var(--text-sm);
-    color: var(--gray-300);
-    padding: 0rem 0.5rem;
-  }
-
-  @media (min-width: 50em) {
-    .mention-card {
-      border-radius: 1.5rem;
-      height: 9.5rem;
+      justify-self: start;
     }
   }
 </style>

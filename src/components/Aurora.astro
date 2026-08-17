@@ -1,0 +1,87 @@
+---
+---
+
+<div class="aurora" aria-hidden="true">
+	<div class="orb orb-a"></div>
+	<div class="orb orb-b"></div>
+	<div class="orb orb-c"></div>
+	<div class="pointer"></div>
+	<div class="grain"></div>
+</div>
+
+<style>
+	.aurora {
+		position: fixed;
+		inset: 0;
+		z-index: -1;
+		overflow: hidden;
+		pointer-events: none;
+	}
+
+	.orb {
+		position: absolute;
+		border-radius: 50%;
+		filter: blur(72px);
+		will-change: transform;
+		animation: aurora-drift 22s var(--ease-out) infinite;
+	}
+
+	.orb-a {
+		width: min(70vw, 48rem);
+		height: min(70vw, 48rem);
+		top: -18%;
+		left: -12%;
+		background: var(--glow-violet);
+		opacity: 0.9;
+	}
+
+	.orb-b {
+		width: min(55vw, 38rem);
+		height: min(55vw, 38rem);
+		top: -8%;
+		right: -18%;
+		background: var(--glow-cyan);
+		animation-delay: -8s;
+		opacity: 0.75;
+	}
+
+	.orb-c {
+		width: min(50vw, 32rem);
+		height: min(50vw, 32rem);
+		top: 42%;
+		left: 28%;
+		background: rgba(244, 114, 182, 0.28);
+		animation-delay: -14s;
+		opacity: 0.55;
+	}
+
+	:global(.theme-dark) .orb-c {
+		background: rgba(244, 114, 182, 0.16);
+	}
+
+	.pointer {
+		position: absolute;
+		inset: 0;
+		background: radial-gradient(
+			520px circle at var(--pointer-x) var(--pointer-y),
+			var(--accent-overlay),
+			transparent 55%
+		);
+		opacity: 0.7;
+	}
+
+	.grain {
+		position: absolute;
+		inset: 0;
+		opacity: 0.18;
+		mix-blend-mode: overlay;
+		background-image: url('/assets/backgrounds/noise.png');
+		background-size: 220px;
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.orb {
+			animation: none;
+		}
+	}
+</style>
