@@ -54,7 +54,7 @@ const {
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link
-  href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,700;1,400&family=Rubik:wght@500;600&display=swap"
+  href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Outfit:wght@300;400;500;600;700&family=Syne:wght@500;600;700;800&display=swap"
   rel="stylesheet"
 />
 <script is:inline>
@@ -69,6 +69,7 @@ const {
   };
   const isDark = getThemePreference() === "dark";
   document.documentElement.classList[isDark ? "add" : "remove"]("theme-dark");
+  document.documentElement.classList.add("js-effects");
 
   if (typeof localStorage !== "undefined") {
     // Watch the document element and persist user preference when it changes.

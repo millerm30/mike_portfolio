@@ -3,8 +3,12 @@ import CallToAction from './CallToAction.astro';
 import Icon from './Icon.astro';
 ---
 
-<aside>
-	<h2>Interested in working together?</h2>
+<aside data-reveal>
+	<div class="copy">
+		<p class="kicker">Next conversation</p>
+		<h2>Have something worth building?</h2>
+		<p>I like hard product problems, clean APIs, and shipping with people who care about the details.</p>
+	</div>
 	<CallToAction href="mailto:millergm30@gmail.com">
 		Send Me a Message
 		<Icon icon="paper-plane-tilt" size="1.2em" />
@@ -13,34 +17,61 @@ import Icon from './Icon.astro';
 
 <style>
 	aside {
+		position: relative;
+		overflow: hidden;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		gap: 3rem;
-		border-top: 1px solid var(--gray-800);
-		border-bottom: 1px solid var(--gray-800);
-		padding: 5rem 1.5rem;
-		background-color: var(--gray-999_40);
-		box-shadow: var(--shadow-sm);
+		gap: 2rem;
+		margin-inline: 1.25rem;
+		padding: 3.5rem 1.5rem;
+		border-radius: 1.75rem;
+		border: 1px solid var(--glass-border);
+		background: var(--surface);
+		box-shadow: var(--shadow-md);
+		text-align: center;
+	}
+
+	aside::before {
+		content: '';
+		position: absolute;
+		inset: -40% auto auto 20%;
+		width: 22rem;
+		height: 22rem;
+		background: radial-gradient(circle, var(--glow-violet), transparent 70%);
+		pointer-events: none;
+	}
+
+	.copy {
+		display: grid;
+		gap: 0.7rem;
+		position: relative;
+		justify-items: center;
 	}
 
 	h2 {
-		font-size: var(--text-xl);
-		text-align: center;
-		max-width: 15ch;
+		font-size: clamp(1.8rem, 4vw, 3rem);
+		max-width: 16ch;
+	}
+
+	.copy p:last-child {
+		max-width: 42ch;
+		color: var(--gray-300);
 	}
 
 	@media (min-width: 50em) {
 		aside {
-			padding: 7.5rem;
+			margin-inline: auto;
+			max-width: 83rem;
+			width: calc(100% - 5rem);
+			padding: 4.5rem 3.5rem;
 			flex-direction: row;
-			flex-wrap: wrap;
 			justify-content: space-between;
+			text-align: left;
 		}
 
-		h2 {
-			font-size: var(--text-3xl);
-			text-align: left;
+		.copy {
+			justify-items: start;
 		}
 	}
 </style>

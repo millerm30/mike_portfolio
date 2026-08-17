@@ -11,19 +11,30 @@ const { href } = Astro.props;
 <style>
 	a {
 		position: relative;
-		display: flex;
+		display: inline-flex;
+		align-items: center;
 		place-content: center;
 		text-align: center;
-		padding: 0.56em 2em;
-		gap: 0.8em;
+		padding: 0.85em 1.6em;
+		gap: 0.7em;
 		color: var(--accent-text-over);
 		text-decoration: none;
 		line-height: 1.1;
 		border-radius: 999rem;
 		overflow: hidden;
-		background: var(--gradient-accent-orange);
-		box-shadow: var(--shadow-md);
+		background: var(--gradient-accent);
+		box-shadow: var(--shadow-glow);
 		white-space: nowrap;
+		font-family: var(--font-brand);
+		font-weight: 700;
+		letter-spacing: -0.02em;
+		transition: transform 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out);
+	}
+
+	a:hover,
+	a:focus-visible {
+		transform: translateY(-2px) scale(1.02);
+		box-shadow: 0 0 0 1px rgba(196, 181, 253, 0.3), 0 18px 40px rgba(124, 58, 237, 0.38);
 	}
 
 	@media (min-width: 20em) {
@@ -32,25 +43,25 @@ const { href } = Astro.props;
 		}
 	}
 
-	/* Overlay for hover effects. */
 	a::after {
 		content: '';
 		position: absolute;
 		inset: 0;
 		pointer-events: none;
-		transition: background-color var(--theme-transition);
-		mix-blend-mode: overlay;
+		background: linear-gradient(120deg, transparent 20%, rgba(255, 255, 255, 0.28), transparent 80%);
+		transform: translateX(-120%);
+		transition: transform 0.6s var(--ease-out);
 	}
 
-	a:focus::after,
-	a:hover::after {
-		background-color: hsla(var(--gray-999-basis), 0.3);
+	a:hover::after,
+	a:focus-visible::after {
+		transform: translateX(120%);
 	}
 
 	@media (min-width: 50em) {
 		a {
-			padding: 1.125rem 2.5rem;
-			font-size: var(--text-xl);
+			padding: 1.05rem 1.9rem;
+			font-size: var(--text-lg);
 		}
 	}
 </style>
