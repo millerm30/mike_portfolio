@@ -15,7 +15,7 @@ tags:
 
 As the Fullstack and Mobile Application Developer at Get Coding Training Inc., I play a crucial role in developing and maintaining software solutions that the company uses to track students and coaches. My work ensures seamless functionality and a superior user experience across both web and mobile platforms.
 
-Company Website: <a href="https://www.getcoding.ca" target="_blank">Company Website</a>
+Company Website: <a href="https://get-building.ca/" target="_blank" rel="noopener noreferrer">get-building.ca</a>
 
 Google Play Store: <a href="https://play.google.com/store/apps/details?id=ca.getcoding.app" target="_blank">Google Play Store</a>
 
